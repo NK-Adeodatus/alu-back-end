@@ -36,4 +36,3 @@ def all_to_json():
 
 if __name__ == "__main__":
     all_to_json()
-    

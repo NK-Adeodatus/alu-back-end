@@ -33,4 +33,3 @@ def to_json():
 
 if __name__ == "__main__":
     to_json()
-    
