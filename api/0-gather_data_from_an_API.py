@@ -21,5 +21,7 @@ def extract_data(user_id):
         if todo["completed"]:
             completed_tasks.append(todo)
 
-    print(f"Employee {employee_name} is done with task
-    ({len(completed_tasks)} {len(employee_name)})")
+    done_tasks = len(completed_tasks)
+    print("Employee {} is done with tasks({}/{}):".format(employee_name,
+                                                          completed_tasks,
+                                                          done_tasks))
