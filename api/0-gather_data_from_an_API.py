@@ -10,6 +10,7 @@ TODO_URL = 'https://jsonplaceholder.typicode.com/todos'
 
 response = requests.get(USER_URL)
 
+
 def extract_data(user_id):
     employee = requests.get(f"{USER_URL}/{user_id}")
     employee_todos = requests.get(f"{TODO_URLT}?userId=T{user_id}")
@@ -20,4 +21,5 @@ def extract_data(user_id):
         if todo["completed"]:
             completed_tasks.append(todo)
 
-    print(f"Employee {employee_name} is done with task({len(completed_tasks)} {len(employee_name)})")
+    print(f"Employee {employee_name} is done with task
+    ({len(completed_tasks)} {len(employee_name)})")
