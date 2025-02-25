@@ -1,5 +1,6 @@
 import requests
 
+
 USER_URL = 'https://jsonplaceholder.typicode.com/users'
 TODO_URL = 'https://jsonplaceholder.typicode.com/todos'
 
