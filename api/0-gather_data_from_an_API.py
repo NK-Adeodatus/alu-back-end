@@ -12,8 +12,9 @@ response = requests.get(USER_URL)
 
 
 def extract_data(user_id):
-    employee = requests.get(f"{USER_URL}/{user_id}")
-    employee_todos = requests.get(f"{TODO_URLT}?userId=T{user_id}")
+    employee = requests.get(f"{USER_URL}/{user_id}").json()
+    employee_todos = requests.get(f"{TODO_URL}?userId={user_id}").json()
+
     completed_tasks = []
     employee_name = employee["name"]
 
@@ -21,7 +22,8 @@ def extract_data(user_id):
         if todo["completed"]:
             completed_tasks.append(todo)
 
-    done_tasks = len(completed_tasks)
+    done_tasks = len(employee_todos)
+    print(done_tasks)
     print("Employee {} is done with tasks({}/{}):".format(employee_name,
-                                                          completed_tasks,
+                                                          len(completed_tasks),
                                                           done_tasks))
